@@ -31,7 +31,7 @@ jobs:
 #Manual approval stage
 
       - name: Manual Approval for Terraform Destroy
-        run: echo "Approve the destruction of resources."
+        run: echo "Approve the destruction of resources." && sleep 1m
 
       - name: Terraform Destroy
-        run: terraform destroy
+        run: terraform destroy  --auto-approve
