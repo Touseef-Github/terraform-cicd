@@ -25,13 +25,10 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -out="planfile"
 
-      - name: Terraform Apply
-        run: terraform apply -input=false "planfile"
-
-#Manual approval stage
+        #Manual approval stage
 
       - name: Manual Approval for Terraform Destroy
-        run: echo "Approve the destruction of resources." && sleep 1m
+        run: echo "Approve the deployment of resources."
 
-      - name: Terraform Destroy
-        run: terraform destroy  --auto-approve
+      - name: Terraform Apply
+        run: terraform apply -input=false "planfile"
