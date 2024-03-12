@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "your_bucket_name"
-    key    = "state"
+    bucket = "terraform-deplyment-bucket-testing"
+    key    = "terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "your_db_name"
+    dynamodb_table = "test-table"
   }
 }
